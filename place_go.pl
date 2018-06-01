@@ -1,5 +1,6 @@
 #!/usr/bin/perl -w
 #Script to place correctly GO terms
+#Usage: perl place_go.pl < input.txt > output.txt
 
 use strict;
 

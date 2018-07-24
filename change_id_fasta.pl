@@ -1,19 +1,22 @@
 #!/usr/bin/perl -w
 
-#Convert ID script (FASTA format)
-#Usage: perl change_id_fasta.pl < input.fasta > output.fasta
-#Creates conversion file
+# Convert ID script (FASTA format)
+# Usage: perl change_id_fasta.pl < input.fasta > output.fasta
+# Creates conversion file
 
 use strict;
 
 open(OUT, ">>conversion_fasta_transcripts.txt") or die "Unable to create/open the file\n";
 
+# Inizialization of variables and counter
 my $count = 0;
 my $new_id ="";
 my $new_line="";
 
+# Read lines of the input file
 while (my $line = <>) 
 {
+	# If line has old identifier, chomp it and create new identifier
 	if($line=~/^(\>CBGP\_AIM.*\-RA)/g)
 	{
 		chomp $line;
@@ -29,12 +32,13 @@ while (my $line = <>)
 		
 		
 	}
+	# If it hasn't print the line anyway
 	else {
 	print $line;
 	}
 }
 
-
+# Close output file
 close(OUT);
 
 

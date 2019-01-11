@@ -1,5 +1,10 @@
 #!/usr/bin/perl -w
 
+#This scritp check two list of names and tell if the names of one list are present on the other
+#Get files, store in array, check for duplicated and loop over to get present genes
+
+#Call: check_presence_list.pl (optional > output.txt)
+
 use strict;
 
 open(my $in, "<","new_class.txt") or die "Unable to open the file\n";
